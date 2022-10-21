@@ -8,10 +8,54 @@ const createBuilding = async (req, res) => {
       building
     })
   } catch (error) {
-    return res.status(500).json({ error: error.message })
+    return res.status(500).json(error.message)
+  }
+}
+
+const getAllBuildings = async (req, res) => {
+  try {
+    const buildings = await Building.find()
+    return res.status(200).json({ buildings })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const searchBuilding = async (req, res) => {
+  try {
+    const { name } = req.params
+    const building = await Building.find({
+      building: { $regex: name, $options: 'i' }
+    })
+    if (building) {
+      return res.status(200).json(building)
+    }
+    return res
+      .status(404)
+      .send('Building with the specified ID does not exists')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const getBuildingById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const building = await Building.findById(id)
+    if (building) {
+      return res.status(200).json(building)
+    }
+    return res
+      .status(404)
+      .send('Building with the specified ID does not exists')
+  } catch (error) {
+    return res.status(500).send(error.message)
   }
 }
 
 module.exports = {
-  createBuilding
+  createBuilding,
+  getAllBuildings,
+  searchBuilding,
+  getBuildingById
 }

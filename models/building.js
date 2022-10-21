@@ -7,9 +7,9 @@ const Building = new Schema(
     dateCompleted: { type: String, required: true },
     architect: { type: String, required: true },
     description: { type: String, required: true },
-    img: { type: String, required: true }
-    // archStyle: { type: Schema.Types.ObjectId, ref: 'Style' },
-    // reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }]
+    img: { type: String, required: true },
+    archStyle: { type: Schema.Types.ObjectId, ref: 'Style' },
+    reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }]
   },
   { timestamps: true }
 )
