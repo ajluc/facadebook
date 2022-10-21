@@ -53,9 +53,46 @@ const getBuildingById = async (req, res) => {
   }
 }
 
+const updateBuilding = async (req, res) => {
+  try {
+    const building = await Building.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.status(200).json(building)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteBuilding = async (req, res) => {
+  try {
+    const deleted = await Building.findByIdAndDelete(req.params.id)
+    if (deleted) {
+      return res.status(200).send('Building deleted')
+    }
+    throw new Error('Building not found.')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const addReviewToBuilding = async (req, res) => {
+  try {
+    const building = await Building.findByIdAndUpdate(req.params.id, {
+      $push: { reviews: req.params.review_id }
+    })
+    res.status(200).json(building)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   createBuilding,
   getAllBuildings,
   searchBuilding,
-  getBuildingById
+  getBuildingById,
+  updateBuilding,
+  deleteBuilding,
+  addReviewToBuilding
 }
