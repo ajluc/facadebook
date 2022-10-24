@@ -1,4 +1,4 @@
-const Building = require('../models/building')
+const { Building } = require('../models')
 
 const createBuilding = async (req, res) => {
   try {
@@ -87,6 +87,17 @@ const addReviewToBuilding = async (req, res) => {
   }
 }
 
+const addStyleToBuilding = async (req, res) => {
+  try {
+    const building = await Building.findByIdAndUpdate(req.params.id, {
+      archStyle: req.params.style_id
+    })
+    res.status(200).json(building)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   createBuilding,
   getAllBuildings,
@@ -94,5 +105,6 @@ module.exports = {
   getBuildingById,
   updateBuilding,
   deleteBuilding,
-  addReviewToBuilding
+  addReviewToBuilding,
+  addStyleToBuilding
 }

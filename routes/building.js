@@ -12,6 +12,10 @@ router.put(
   '/:id/:review_id',
   controllers.buildingController.addReviewToBuilding
 )
+router.put(
+  '/:id/style/:style_id',
+  controllers.buildingController.addStyleToBuilding
+)
 router.delete('/:id', controllers.buildingController.deleteBuilding)
 router.get('/search/:name', controllers.buildingController.searchBuilding)
 
