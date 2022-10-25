@@ -9,7 +9,6 @@ const Home = () => {
   const getStyles = async () => {
     console.log('axios pinged')
     const response = await axios.get(`http://localhost:3001/style`)
-    console.log(response)
     setStyles(response.data.buildings)
   }
 

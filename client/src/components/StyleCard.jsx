@@ -1,5 +1,4 @@
 const StyleCard = (props) => {
-  console.log(props)
 
 
   return (

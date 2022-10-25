@@ -13,8 +13,12 @@ const ViewBuildingsOfStyle = () => {
     const response = await axios.get(
       `http://localhost:3001/building/style/${styleId}`
     )
-    setBuildings(response.data.buildings)
-    console.log(styleId)
+    setBuildings(response.data)
+    console.log(response.data)
+  }
+
+  const viewBuilding = (id) => {
+    navigate(`/building/${id}`)
   }
 
   useEffect(() => {
@@ -22,8 +26,15 @@ const ViewBuildingsOfStyle = () => {
   }, [styleId])
 
   return (
-    <div>
-      <h3>please work</h3>
+    <div className="container-grid">
+      {buildings.map((building) => (
+        <BuildingCard
+          key={building._id}
+          id={building._id}
+          building={building.building}
+          onClick={viewBuilding}
+        />
+      ))}
     </div>
   )
 }
