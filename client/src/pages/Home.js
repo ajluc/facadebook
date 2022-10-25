@@ -17,6 +17,16 @@ const Home = () => {
     getStyles()
   }, [])
 
+  let navigate = useNavigate()
+  // const showBuilding = (building) => {
+  //   navigate(``)
+  // }
+
+  const viewStyle = (id) => {
+    console.log(`id= ${id}`)
+    navigate(`/style/${id}`)
+  }
+
   return (
     <div>
       <h1>HOME</h1>
@@ -26,12 +36,11 @@ const Home = () => {
           {styles.map((style) => (
             <StyleCard
               key={style._id}
-              onClick={() => {
-                console.log(style.styleName)
-              }}
+              onClick={viewStyle}
               styleName={style.styleName}
               timeFrame={style.timeFrame}
               exImg={style.exImg}
+              id={style._id}
             />
           ))}
         </section>

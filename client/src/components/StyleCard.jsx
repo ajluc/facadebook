@@ -1,7 +1,9 @@
 const StyleCard = (props) => {
+  console.log(props)
+
 
   return (
-    <div className="style card" onClick={props.onClick}>
+    <div className="style card" onClick={() => props.onClick(props.id)}>
       <div className="img-wrapper">
         <img src={props.exImg} alt="style image" />
       </div>

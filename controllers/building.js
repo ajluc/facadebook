@@ -98,6 +98,17 @@ const addStyleToBuilding = async (req, res) => {
   }
 }
 
+const searchByStyle = async (req, res) => {
+  try {
+    const building = await Building.find({
+      archStyle: req.params.style_id
+    })
+    res.status(200).json(building)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   createBuilding,
   getAllBuildings,
@@ -106,5 +117,6 @@ module.exports = {
   updateBuilding,
   deleteBuilding,
   addReviewToBuilding,
-  addStyleToBuilding
+  addStyleToBuilding,
+  searchByStyle
 }

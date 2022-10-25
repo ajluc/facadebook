@@ -18,5 +18,6 @@ router.put(
 )
 router.delete('/:id', controllers.buildingController.deleteBuilding)
 router.get('/search/:name', controllers.buildingController.searchBuilding)
+router.get('/style/:style_id', controllers.buildingController.searchByStyle)
 
 module.exports = router
