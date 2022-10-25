@@ -7,7 +7,6 @@ const Home = () => {
   const [styles, setStyles] = useState([])
 
   const getStyles = async () => {
-    console.log('axios pinged')
     const response = await axios.get(`http://localhost:3001/style`)
     setStyles(response.data.buildings)
   }
@@ -22,7 +21,6 @@ const Home = () => {
   // }
 
   const viewStyle = (id) => {
-    console.log(`id= ${id}`)
     navigate(`/style/${id}`)
   }
 
@@ -32,7 +30,7 @@ const Home = () => {
       <div className="styles">
         <h2>Architectural Styles</h2>
         <section className="container-grid">
-          {styles.map((style) => (
+          {styles?.map((style) => (
             <StyleCard
               key={style._id}
               onClick={viewStyle}

@@ -14,7 +14,6 @@ const ViewBuildingsOfStyle = () => {
       `http://localhost:3001/building/style/${styleId}`
     )
     setBuildings(response.data)
-    console.log(response.data)
   }
 
   const viewBuilding = (id) => {
@@ -27,11 +26,13 @@ const ViewBuildingsOfStyle = () => {
 
   return (
     <div className="container-grid">
-      {buildings.map((building) => (
+      {buildings?.map((building) => (
         <BuildingCard
           key={building._id}
           id={building._id}
           building={building.building}
+          img={building.img}
+          architect={building.architect}
           onClick={viewBuilding}
         />
       ))}
