@@ -32,6 +32,9 @@ const AddBuildingForm = (props) => {
         <option value='' disabled>- Select Style -</option>
         <option value='63569d7fa129087b76c99a54'>Modern</option>
         <option value='63569d7fa129087b76c99a55'>Post-Modern</option>
+        <option value='63569d7fa129087b76c99a56'>Neoclassical</option>
+        <option value='63569d7fa129087b76c99a57'>Classical</option>
+        <option value='63569d7fa129087b76c99a58'>Parametric</option>
       </select>
       <label htmlFor="building">Building Title</label>
       <input type='text' id='building' onChange={handleChange} value={formState.building} />
@@ -39,6 +42,8 @@ const AddBuildingForm = (props) => {
       <input type='text' id='architect' onChange={handleChange} value={formState.architect} />
       <label htmlFor="dateCompleted">Date Completed</label>
       <input type='text' id="dateCompleted" onChange={handleChange} value={formState.dateCompleted} />
+      <label htmlFor="img">Image URL</label>
+      <input type='text' id="img" onChange={handleChange} value={formState.img} />
       <label htmlFor="description">Description</label>
       <textarea
         id="description"
