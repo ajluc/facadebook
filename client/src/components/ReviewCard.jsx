@@ -31,6 +31,10 @@ const ReviewCard = (props) => {
     setConditional(false)
   }
 
+  const cancelEdit = () => {
+    setConditional(true)
+  }
+
   return (
     <div className="card review-card">
       <div className="flex-col">
@@ -43,7 +47,7 @@ const ReviewCard = (props) => {
           <button onClick={editReview}>edit</button>
         </div> :
         <form onSubmit={handleSubmit}>
-          <label htmlFor="message">Message</label>
+          {/* <label htmlFor="message">Message</label> */}
           <textarea
             id="message"
             cols="30"
@@ -52,6 +56,7 @@ const ReviewCard = (props) => {
             value={formState.message}
           ></textarea>
           <button type="submit">Send</button>
+          <button onClick={cancelEdit}>Cancel</button>
         </form>}
       </div>
     </div>

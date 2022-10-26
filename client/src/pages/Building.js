@@ -37,9 +37,9 @@ const Building = () => {
 
   return (
     <div>
-      <div className="building-content">
+      <div className="card large-card">
         {buildingDetails ? (
-          <div>
+          <div className="building-content">
             <h1>{buildingDetails.building}</h1>
             <section className="image-container">
               <img src={buildingDetails.img} alt="building" />
