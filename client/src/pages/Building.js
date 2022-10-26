@@ -7,17 +7,36 @@ const Building = () => {
   let { buildingId } = useParams()
 
   const [buildingDetails, setBuildingDetails] = useState(null)
+  const [reviews, setReviews] = useState('')
 
   const getBuildingDetails = async () => {
     const response = await axios.get(
       `http://localhost:3001/building/${buildingId}`
     )
     setBuildingDetails(response.data)
+    setReviews(response.data.reviews)
   }
 
   useEffect(() => {
     getBuildingDetails()
   }, [buildingId])
+
+  // useEffect(() => {
+  //   getReview(buildingDetails.reviews[0])
+  // }, [buildingDetails])
+
+  // create a function
+  // for each buildingDetails.reviews array element (review ID)
+  // axios call to get that review
+  // push to array called reviews
+  // const getReview = async (reviewId) => {
+  //   const response = await axios.get(`http://localhost:3001/review/${reviewId}`)
+  //   setReviews(...reviews, response.data)
+  // }
+
+  // const getAllReviews = (reviewArray) => {
+  //   reviewArray.forEach((review) => getReview(review))
+  // }
 
   return (
     <div>
@@ -41,13 +60,18 @@ const Building = () => {
                 </div>
               </div>
             </section>
+            <div className="review-container">
+              {/* {reviews?.map((review) => (
+                <ReviewCard
+                  key={review._id}
+                  pseudonym={review.pseudonym}
+                  rating={review.rating}
+                  message={review.message}
+                />
+              ))} */}
+            </div>
           </div>
         ) : null}
-        {/* <div className="review-container">
-          {reviews.map((review) => (
-            <ReviewCard key={review._id} />
-          ))}
-        </div> */}
       </div>
     </div>
   )
