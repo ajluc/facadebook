@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: #e2e2e2;
 }
 
 code {
@@ -12,13 +14,24 @@ code {
     monospace;
 }
 
+header {
+  background-color: pink;
+}
+
+.building-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .card {
   max-width: 300px;
   max-height: 380px;
-  border-radius: 4px;
-  background-color: #878787;
+  border-radius: 10px;
+  background-color: white;
   cursor: pointer;
   transition: all 0.2s;
+  filter: drop-shadow(1px 1px 2px rgb(169, 169, 169))
 }
 
 .card:hover {
@@ -27,6 +40,7 @@ code {
 
 .card .img-wrapper {
   width: auto;
+  border-radius: 10px;
 }
 
 .card img {
