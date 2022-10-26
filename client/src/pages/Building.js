@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import ReviewCard from '../components/ReviewCard'
+import AddReview from '../components/AddReview'
 
 const Building = () => {
   let { buildingId } = useParams()
@@ -39,7 +40,6 @@ const Building = () => {
     }
 
     getReviews()
-    console.log('oop')
   }, [reviewIds])
 
   return (
@@ -73,6 +73,9 @@ const Building = () => {
                   message={review.message}
                 />
               ))}
+            </div>
+            <div className="review-form">
+              <AddReview buildingId={buildingId} />
             </div>
           </div>
         ) : null}

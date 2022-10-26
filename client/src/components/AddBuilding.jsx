@@ -15,7 +15,7 @@ const AddBuildingForm = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let res = await axios.post(`http://localhost:3001/building/new`, formState)
+    const res = await axios.post(`http://localhost:3001/building/new`, formState)
     console.log(res.data)
     setFormState(initialState)
     // props.getIssues() function that got all our issues so we can instantly post them on the submit
