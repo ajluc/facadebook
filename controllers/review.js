@@ -1,9 +1,12 @@
-const { Review } = require('../models')
+const { Review, Building } = require('../models')
 
 const createReview = async (req, res) => {
   try {
     const review = await new Review(req.body)
     await review.save()
+    const building = await Building.findById(req.body.buildingId)
+    building.reviews.push(review._id)
+    await building.save()
     return res.status(201).json({
       review
     })
@@ -49,6 +52,10 @@ const updateReview = async (req, res) => {
 const deleteReview = async (req, res) => {
   try {
     const deleted = await Review.findByIdAndDelete(req.params.id)
+    const building = await Building.findById(req.body.buildingId)
+    building.reviews.splice(req.body.index, 1)
+    building.save()
+    console.log(req.body)
     if (deleted) {
       return res.status(200).send('Review deleted')
     }

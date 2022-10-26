@@ -1,34 +1,27 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const AddReview = (props) => {
   const initialState = {
     pseudonym: '',
     rating: '',
-    message: ''
+    message: '',
+    buildingId: props.buildingDetails._id
   }
   const [formState, setFormState] = useState(initialState)
-  const [reviewId, setReviewId] = useState('')
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     const res = await axios.post(`http://localhost:3001/review/new`, formState)
-    setReviewId(res.data.review._id)
+    let tempState = {...props.buildingDetails}
+    tempState.reviews.push(res.data.review)
+    props.setBuildingDetails(tempState)
     setFormState(initialState)
-    // props.getIssues() function that got all our issues so we can instantly post them on the submit
   }
 
   const handleChange = (event) => {
     setFormState({...formState, [event.target.id]: event.target.value})
   }
-
-  const pushReview = async () => {
-    const res = await axios.put(`http://localhost:3001/building/${props.buildingId}/${reviewId}`)
-  }
-
-  useEffect (() => {
-    pushReview()
-  }, [reviewId])
 
   return(
     <form onSubmit={handleSubmit}>
@@ -48,7 +41,7 @@ const AddReview = (props) => {
       <textarea
         id="message"
         cols="30"
-        rows="10"
+        rows="4"
         onChange={handleChange}
         value={formState.message}
       ></textarea>

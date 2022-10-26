@@ -1,10 +1,10 @@
-# Architects Anonymous
+# FacadeBook
 
 ## Date: 10/20/2022
 
 ### Author: Amaya Lucas
 
-#### [Trello](https://trello.com/b/BegZayn6/architects-anonymous) || [GitHub](https://github.com/ajluc) | [LinkedIn](https://www.linkedin.com/in/amaya-lucas/) | [Instagram](https://instagram.com/ayama.jo)
+#### [Trello](https://trello.com/b/BegZayn6/facadebook) || [GitHub](https://github.com/ajluc) | [LinkedIn](https://www.linkedin.com/in/amaya-lucas/) | [Instagram](https://instagram.com/ayama.jo)
 
 ---
 
@@ -43,5 +43,7 @@ What do you need to know to start? I guess I had better tell you those sorts of 
 ---
 
 ### **_Credits_**
+
+Async and for...of: [Paul Clark on GitHub](https://gist.github.com/joeytwiddle/37d2085425c049629b80956d3c618971)
 
 Markdown Guide: [ia.net](https://ia.net/writer/support/general/markdown-guide)

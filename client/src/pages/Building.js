@@ -8,39 +8,32 @@ const Building = () => {
   let { buildingId } = useParams()
 
   const [buildingDetails, setBuildingDetails] = useState(null)
-  const [reviewIds, setReviewIds] = useState('')
-  const [reviews, setReviews] = useState([])
+  // const [reviewIds, setReviewIds] = useState('')
+  // const [reviews, setReviews] = useState([])
+
+  // const getReviews = async () => {
+  //   for (const reviewId of reviewIds) {
+  //     const response = await axios.get(
+  //       `http://localhost:3001/review/${reviewId}`
+  //     )
+  //     setReviews((reviews) => [...reviews, response.data])
+  //   }
+  // }
+
+  const getBuildingDetails = async () => {
+    const response = await axios.get(
+      `http://localhost:3001/building/${buildingId}`
+    )
+    setBuildingDetails(response.data)
+
+    // setReviewIds(response.data.reviews)
+
+    // getReviews()
+  }
 
   useEffect(() => {
-    const getBuildingDetails = async () => {
-      const response = await axios.get(
-        `http://localhost:3001/building/${buildingId}`
-      )
-      setBuildingDetails(response.data)
-
-      setReviewIds(response.data.reviews)
-
-      // for (const review of response.data.reviews) {
-      //   const res = await axios.get(`http://localhost:3001/review/${review}`)
-      //   setReviews(...reviews, res.data)
-      // }
-    }
-
     getBuildingDetails()
   }, [buildingId])
-
-  useEffect(() => {
-    const getReviews = async () => {
-      for (const reviewId of reviewIds) {
-        const response = await axios.get(
-          `http://localhost:3001/review/${reviewId}`
-        )
-        setReviews((reviews) => [...reviews, response.data])
-      }
-    }
-
-    getReviews()
-  }, [reviewIds])
 
   return (
     <div>
@@ -65,17 +58,24 @@ const Building = () => {
               </div>
             </section>
             <div className="review-container">
-              {reviews?.map((review) => (
+              {buildingDetails.reviews?.map((review, index) => (
                 <ReviewCard
                   key={review._id}
+                  id={review._id}
                   pseudonym={review.pseudonym}
                   rating={review.rating}
                   message={review.message}
+                  buildingDetails={buildingDetails}
+                  setBuildingDetails={setBuildingDetails}
+                  index={index}
                 />
               ))}
             </div>
             <div className="review-form">
-              <AddReview buildingId={buildingId} />
+              <AddReview
+                buildingDetails={buildingDetails}
+                setBuildingDetails={setBuildingDetails}
+              />
             </div>
           </div>
         ) : null}

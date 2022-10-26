@@ -41,7 +41,7 @@ const searchBuilding = async (req, res) => {
 const getBuildingById = async (req, res) => {
   try {
     const { id } = req.params
-    const building = await Building.findById(id)
+    const building = await Building.findById(id).populate('reviews')
     if (building) {
       return res.status(200).json(building)
     }
