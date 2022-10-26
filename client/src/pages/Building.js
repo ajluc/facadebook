@@ -7,36 +7,40 @@ const Building = () => {
   let { buildingId } = useParams()
 
   const [buildingDetails, setBuildingDetails] = useState(null)
-  const [reviews, setReviews] = useState('')
-
-  const getBuildingDetails = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/building/${buildingId}`
-    )
-    setBuildingDetails(response.data)
-    setReviews(response.data.reviews)
-  }
+  const [reviewIds, setReviewIds] = useState('')
+  const [reviews, setReviews] = useState([])
 
   useEffect(() => {
+    const getBuildingDetails = async () => {
+      const response = await axios.get(
+        `http://localhost:3001/building/${buildingId}`
+      )
+      setBuildingDetails(response.data)
+
+      setReviewIds(response.data.reviews)
+
+      // for (const review of response.data.reviews) {
+      //   const res = await axios.get(`http://localhost:3001/review/${review}`)
+      //   setReviews(...reviews, res.data)
+      // }
+    }
+
     getBuildingDetails()
   }, [buildingId])
 
-  // useEffect(() => {
-  //   getReview(buildingDetails.reviews[0])
-  // }, [buildingDetails])
+  useEffect(() => {
+    const getReviews = async () => {
+      for (const reviewId of reviewIds) {
+        const response = await axios.get(
+          `http://localhost:3001/review/${reviewId}`
+        )
+        setReviews((reviews) => [...reviews, response.data])
+      }
+    }
 
-  // create a function
-  // for each buildingDetails.reviews array element (review ID)
-  // axios call to get that review
-  // push to array called reviews
-  // const getReview = async (reviewId) => {
-  //   const response = await axios.get(`http://localhost:3001/review/${reviewId}`)
-  //   setReviews(...reviews, response.data)
-  // }
-
-  // const getAllReviews = (reviewArray) => {
-  //   reviewArray.forEach((review) => getReview(review))
-  // }
+    getReviews()
+    console.log('oop')
+  }, [reviewIds])
 
   return (
     <div>
@@ -45,7 +49,7 @@ const Building = () => {
           <div>
             <h1>{buildingDetails.building}</h1>
             <section className="image-container">
-              <img src={buildingDetails.img} alt="building image" />
+              <img src={buildingDetails.img} alt="building" />
             </section>
             <section className="details">
               <div className="flex-row building-details">
@@ -61,14 +65,14 @@ const Building = () => {
               </div>
             </section>
             <div className="review-container">
-              {/* {reviews?.map((review) => (
+              {reviews?.map((review) => (
                 <ReviewCard
                   key={review._id}
                   pseudonym={review.pseudonym}
                   rating={review.rating}
                   message={review.message}
                 />
-              ))} */}
+              ))}
             </div>
           </div>
         ) : null}
