@@ -23,7 +23,7 @@ header {
   z-index: 1;
 }
 
-h3 {
+h3, h4 {
   margin: 0px
 }
 
@@ -33,7 +33,10 @@ p {
 
 .bold {
   font-weight: bold;
-  margin: 0px;
+}
+
+.grey {
+  color: rgb(108, 108, 108);
 }
 
 img {
@@ -118,8 +121,10 @@ input, select, textarea {
 
 .details {
   padding: 20px;
-  display: flex;
-  flex-direction: column;
+}
+
+.title-info {
+  margin: 0px 0px 0px 15px;
 }
 
 img.large-img {
@@ -135,6 +140,8 @@ img.large-img {
 .review-card {
   margin: 0px 0px 15px;
   padding: 20px;
+  background-color: #e2e2e2;
+  filter: none;
 }
 
 .flex-row {
@@ -154,4 +161,8 @@ img.large-img {
   max-width: 50px;
   border-radius: 50%;
   margin: 0px;
+}
+
+.description {
+  margin: 20px 0px 0px 0px;
 }

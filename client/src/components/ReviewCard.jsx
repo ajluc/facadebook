@@ -41,8 +41,8 @@ const ReviewCard = (props) => {
   return (
     <div className="card review-card">
       <div className="flex-col">
-        <p className="bold">{props.pseudonym}</p>
-        <p>{props.rating}</p>
+        <h4>{props.pseudonym}</h4>
+        <p className="grey">{props.rating} stars</p>
         {conditional ? 
         <div>
           <p>{props.message}</p>

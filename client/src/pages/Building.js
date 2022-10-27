@@ -22,8 +22,7 @@ const Building = () => {
 
   let navigate = useNavigate()
   const viewStyle = (id) => {
-    // navigate(`/style/${id}`)
-    console.log(id)
+    navigate(`/style/${id.target.id}`)
   }
 
   return (
@@ -31,21 +30,27 @@ const Building = () => {
       <div className="card large-card">
         {buildingDetails ? (
           <div>
-            <img
-              src={buildingDetails.archStyle.exImg}
-              alt="style"
-              className="icon-img"
-              id={buildingDetails.archStyle}
-              onClick={viewStyle}
-            />
-            <section className="details">
-              <h3>{buildingDetails.architect}</h3>
+            <section className="details flex-col">
               <div className="flex-row">
-                <p>{buildingDetails.building} </p>
-                <p>&nbsp; &bull; &nbsp;</p>
-                <p> Built: {buildingDetails.dateCompleted}</p>
+                <img
+                  src={buildingDetails.archStyle.exImg}
+                  alt="style"
+                  className="icon-img"
+                  id={buildingDetails.archStyle._id}
+                  onClick={viewStyle}
+                />
+                <div className="title-info flex-col">
+                  <h3>{buildingDetails.architect}</h3>
+                  <div className="flex-row grey">
+                    <p className="bold">{buildingDetails.building} </p>
+                    <p>&nbsp; &bull; &nbsp;</p>
+                    <p> Built: {buildingDetails.dateCompleted}</p>
+                  </div>
+                </div>
               </div>
-              <p>Description: {buildingDetails.description}</p>
+              <p className="description">
+                Description: {buildingDetails.description}
+              </p>
             </section>
             <section className="image-container">
               <img
