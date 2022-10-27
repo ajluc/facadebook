@@ -39,7 +39,9 @@ const searchBuilding = async (req, res) => {
 const getBuildingById = async (req, res) => {
   try {
     const { id } = req.params
-    const building = await Building.findById(id).populate('reviews')
+    const building = await Building.findById(id)
+      .populate('reviews')
+      .populate('archStyle')
     if (building) {
       return res.status(200).json(building)
     }

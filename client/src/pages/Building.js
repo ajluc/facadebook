@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import ReviewCard from '../components/ReviewCard'
 import AddReview from '../components/AddReview'
@@ -20,11 +20,24 @@ const Building = () => {
     getBuildingDetails()
   }, [buildingId])
 
+  let navigate = useNavigate()
+  const viewStyle = (id) => {
+    // navigate(`/style/${id}`)
+    console.log(id)
+  }
+
   return (
     <div className="large-card-container">
       <div className="card large-card">
         {buildingDetails ? (
           <div>
+            <img
+              src={buildingDetails.archStyle.exImg}
+              alt="style"
+              className="icon-img"
+              id={buildingDetails.archStyle}
+              onClick={viewStyle}
+            />
             <section className="details">
               <h3>{buildingDetails.architect}</h3>
               <div className="flex-row">
