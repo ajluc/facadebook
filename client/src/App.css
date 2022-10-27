@@ -41,12 +41,6 @@ img {
   /* border-radius: 10px 10px 0px 0px; */
 }
 
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
 .card {
   border-radius: 10px;
   background-color: white;
@@ -124,6 +118,8 @@ input, select, textarea {
 
 .details {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 img.large-img {
@@ -139,4 +135,14 @@ img.large-img {
 .review-card {
   margin: 0px 0px 15px;
   padding: 20px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }

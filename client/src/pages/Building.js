@@ -8,27 +8,12 @@ const Building = () => {
   let { buildingId } = useParams()
 
   const [buildingDetails, setBuildingDetails] = useState(null)
-  // const [reviewIds, setReviewIds] = useState('')
-  // const [reviews, setReviews] = useState([])
-
-  // const getReviews = async () => {
-  //   for (const reviewId of reviewIds) {
-  //     const response = await axios.get(
-  //       `http://localhost:3001/review/${reviewId}`
-  //     )
-  //     setReviews((reviews) => [...reviews, response.data])
-  //   }
-  // }
 
   const getBuildingDetails = async () => {
     const response = await axios.get(
       `http://localhost:3001/building/${buildingId}`
     )
     setBuildingDetails(response.data)
-
-    // setReviewIds(response.data.reviews)
-
-    // getReviews()
   }
 
   useEffect(() => {
@@ -41,9 +26,12 @@ const Building = () => {
         {buildingDetails ? (
           <div>
             <section className="details">
-              <h3>{buildingDetails.building}</h3>
-              <p>Architect: {buildingDetails.architect}</p>
-              <p>Built: {buildingDetails.dateCompleted}</p>
+              <h3>{buildingDetails.architect}</h3>
+              <div className="flex-row">
+                <p>{buildingDetails.building} </p>
+                <p>&nbsp; &bull; &nbsp;</p>
+                <p> Built: {buildingDetails.dateCompleted}</p>
+              </div>
               <p>Description: {buildingDetails.description}</p>
             </section>
             <section className="image-container">
@@ -63,6 +51,7 @@ const Building = () => {
                   message={review.message}
                   buildingDetails={buildingDetails}
                   setBuildingDetails={setBuildingDetails}
+                  getBuildingDetails={getBuildingDetails}
                   index={index}
                 />
               ))}

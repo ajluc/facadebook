@@ -2,7 +2,9 @@ import axios from "axios"
 import { useState } from "react"
 
 const ReviewCard = (props) => {
-  const initialState = {} // want initial state to be the current review data - does that prop already pass thru?
+  const initialState = {
+    message: props.message
+  } // want initial state to be the current review data - does that prop already pass thru?
   const [formState, setFormState] = useState(initialState)
   const [conditional, setConditional] = useState(true)
 
@@ -11,6 +13,7 @@ const ReviewCard = (props) => {
     const res = axios.put(`http://localhost:3001/review/${props.id}`, { message: formState.message})
     console.log(res)
     setConditional(true)
+    props.getBuildingDetails()
   }
 
   const handleChange = (event) => {
