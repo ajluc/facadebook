@@ -41,17 +41,22 @@ const ReviewCard = (props) => {
   return (
     <div className="card review-card">
       <div className="flex-col">
-        <h4>{props.pseudonym}</h4>
+        <div className="flex-row space-between">
+          <h4>{props.pseudonym}</h4>
+          <div>
+            {/* {conditional && <button onClick={editReview}>edit</button>} */}
+            <button onClick={deleteReview}>x</button>
+          </div>
+        </div>
         <p className="grey">{props.rating} stars</p>
         {conditional ? 
         <div>
-          <p>{props.message}</p>
-          <button onClick={deleteReview}>x</button>
-          <button onClick={editReview}>edit</button>
+          <p onClick={editReview}>{props.message}</p>
+          
         </div> :
         <form onSubmit={handleSubmit}>
           {/* <label htmlFor="message">Message</label> */}
-          <textarea
+          <textarea className="edit-review"
             id="message"
             cols="30"
             rows="4"

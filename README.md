@@ -50,4 +50,6 @@ Markdown Guide: [ia.net](https://ia.net/writer/support/general/markdown-guide)
 
 Drop-Shadow: [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow)
 
+Hidden Scrollbar: [W3Schools](https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp)
+
 Title: A million thank-you's to Andy Garcia for the project name. Here's hoping we don't both get sued for intellectual property theft.

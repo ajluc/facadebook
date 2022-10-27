@@ -28,7 +28,7 @@ h3, h4 {
 }
 
 p {
-  margin: 10px 0px 0px 0px;
+  margin: 5px 0px;
 }
 
 .bold {
@@ -112,11 +112,23 @@ form {
   justify-content: space-around;
   width: auto;
   height: auto;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 input, select, textarea {
-  margin: 0px 0px 10px;
+  margin: 5px 0px;
+}
+
+.edit-review {
+  background-color: #e2e2e2;
+  border: none;
+  border-radius: 10px;
+  height: auto;
+  max-height: auto;
+}
+
+.edit-review::-webkit-scrollbar {
+  display: none;
 }
 
 .details {
@@ -140,8 +152,8 @@ img.large-img {
 .review-card {
   margin: 0px 0px 15px;
   padding: 20px;
-  background-color: #e2e2e2;
-  filter: none;
+  /* background-color: #e2e2e2;
+  filter: none; */
 }
 
 .flex-row {
@@ -152,6 +164,10 @@ img.large-img {
 .flex-col {
   display: flex;
   flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .icon-img {
