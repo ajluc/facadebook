@@ -36,26 +36,22 @@ const Building = () => {
   }, [buildingId])
 
   return (
-    <div>
+    <div className="large-card-container">
       <div className="card large-card">
         {buildingDetails ? (
-          <div className="building-content">
-            <h1>{buildingDetails.building}</h1>
-            <section className="image-container">
-              <img src={buildingDetails.img} alt="building" />
-            </section>
+          <div>
             <section className="details">
-              <div className="flex-row building-details">
-                <div className="detail">
-                  <p>Architect: {buildingDetails.architect}</p>
-                </div>
-                <div className="detail">
-                  <p>Built: {buildingDetails.dateCompleted}</p>
-                </div>
-                <div className="detail">
-                  <p>Description: {buildingDetails.description}</p>
-                </div>
-              </div>
+              <h3>{buildingDetails.building}</h3>
+              <p>Architect: {buildingDetails.architect}</p>
+              <p>Built: {buildingDetails.dateCompleted}</p>
+              <p>Description: {buildingDetails.description}</p>
+            </section>
+            <section className="image-container">
+              <img
+                src={buildingDetails.img}
+                alt="building"
+                className="large-img"
+              />
             </section>
             <div className="review-container">
               {buildingDetails.reviews?.map((review, index) => (
@@ -70,8 +66,6 @@ const Building = () => {
                   index={index}
                 />
               ))}
-            </div>
-            <div className="review-form">
               <AddReview
                 buildingDetails={buildingDetails}
                 setBuildingDetails={setBuildingDetails}

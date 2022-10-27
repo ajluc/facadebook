@@ -24,12 +24,12 @@ const AddReview = (props) => {
   }
 
   return(
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="pseudonym">Your Pseudonym</label>
-      <input type='text' id='pseudonym' onChange={handleChange} value={formState.pseudonym} />
-      <label htmlFor="rating">Architectural Style:</label>
+    <form className="card" onSubmit={handleSubmit}>
+      {/* <label htmlFor="pseudonym">Your Pseudonym</label> */}
+      <input type='text' placeholder='Reviewer' id='pseudonym' onChange={handleChange} value={formState.pseudonym} />
+      {/* <label htmlFor="rating">Architectural Style:</label> */}
       <select id="rating" onChange={handleChange} value={formState.rating} >
-        <option value='' disabled>- Select Stars -</option>
+        <option value='' disabled>- Select Rating -</option>
         <option value={0}>0 Stars</option>
         <option value={1}>1 Star</option>
         <option value={2}>2 Stars</option>
@@ -37,9 +37,10 @@ const AddReview = (props) => {
         <option value={4}>4 Stars</option>
         <option value={5}>5 Stars</option>
       </select>
-      <label htmlFor="message">Message</label>
+      {/* <label htmlFor="message">Message</label> */}
       <textarea
         id="message"
+        placeholder="Add new review"
         cols="30"
         rows="4"
         onChange={handleChange}

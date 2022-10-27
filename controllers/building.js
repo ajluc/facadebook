@@ -30,9 +30,7 @@ const searchBuilding = async (req, res) => {
     if (building) {
       return res.status(200).json(building)
     }
-    return res
-      .status(404)
-      .send('Building with the specified ID does not exists')
+    return res.status(404).send('Building with the specified ID does not exist')
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -45,9 +43,7 @@ const getBuildingById = async (req, res) => {
     if (building) {
       return res.status(200).json(building)
     }
-    return res
-      .status(404)
-      .send('Building with the specified ID does not exists')
+    return res.status(404).send('Building with the specified ID does not exist')
   } catch (error) {
     return res.status(500).send(error.message)
   }
