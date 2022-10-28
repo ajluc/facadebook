@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -31,6 +31,12 @@ p {
   margin: 5px 0px;
 }
 
+h3, h4, p, textarea {
+  transform: scale(1, .95);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -42,6 +48,22 @@ p {
 img {
   margin: 20px 0px 0px 0px;
   /* border-radius: 10px 10px 0px 0px; */
+}
+
+button {
+  background-color: white;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: #e2e2e2;
+  border-radius: 10px;
+}
+
+button.delete:hover {
+  border-radius: 50%;
 }
 
 .card {
@@ -65,7 +87,7 @@ img {
 }
 
 .large-card {
-  max-width: 60%;
+  max-width: 700px;
   max-height: fit-content;
   width: 60%;
   height: auto;
@@ -120,15 +142,27 @@ input, select, textarea {
 }
 
 .edit-review {
-  background-color: #e2e2e2;
-  border: none;
+  /* background-color: #e2e2e2; */
+  border: 1px solid #e2e2e2;
   border-radius: 10px;
   height: auto;
   max-height: auto;
+  resize: none;
+}
+
+.edit-review:focus {
+  outline: none;
 }
 
 .edit-review::-webkit-scrollbar {
   display: none;
+}
+
+.review-body:hover {
+  background-color: #e2e2e2;
+  border-radius: 10px;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .details {
@@ -137,6 +171,7 @@ input, select, textarea {
 
 .title-info {
   margin: 0px 0px 0px 15px;
+  justify-content: center;
 }
 
 img.large-img {
@@ -170,6 +205,10 @@ img.large-img {
   justify-content: space-between;
 }
 
+.align-end {
+  align-self: flex-end;
+}
+
 .icon-img {
   height: 50px;
   width: 50px;
@@ -177,6 +216,11 @@ img.large-img {
   max-width: 50px;
   border-radius: 50%;
   margin: 0px;
+}
+
+.icon-img:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .description {

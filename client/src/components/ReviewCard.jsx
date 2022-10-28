@@ -45,17 +45,13 @@ const ReviewCard = (props) => {
           <h4>{props.pseudonym}</h4>
           <div>
             {/* {conditional && <button onClick={editReview}>edit</button>} */}
-            <button onClick={deleteReview}>x</button>
+            <button className="delete grey" onClick={deleteReview}>x</button>
           </div>
         </div>
         <p className="grey">{props.rating} stars</p>
         {conditional ? 
-        <div>
-          <p onClick={editReview}>{props.message}</p>
-          
-        </div> :
+        <p className="review-body" onClick={editReview}>{props.message}</p> :
         <form onSubmit={handleSubmit}>
-          {/* <label htmlFor="message">Message</label> */}
           <textarea className="edit-review"
             id="message"
             cols="30"
@@ -63,8 +59,10 @@ const ReviewCard = (props) => {
             onChange={handleChange}
             value={formState.message}
           ></textarea>
-          <button type="submit">Send</button>
-          <button onClick={cancelEdit}>Cancel</button>
+          <div className="align-end">
+            <button onClick={cancelEdit}>Cancel</button>
+            <button type="submit">Send</button>
+          </div>
         </form>}
       </div>
     </div>
