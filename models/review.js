@@ -5,6 +5,7 @@ const Review = new Schema(
     pseudonym: { type: String, required: true },
     rating: { type: Number, required: true },
     message: { type: String, required: true },
+    edited: { type: Boolean, required: true },
     buildingId: { type: Schema.Types.ObjectId, ref: 'Building' }
   },
   { timestamps: true }

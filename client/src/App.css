@@ -9,10 +9,10 @@ body {
   background-color: #e2e2e2;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 header {
   background-color: white;
@@ -29,6 +29,12 @@ h3, h4 {
 
 p {
   margin: 5px 0px;
+}
+
+input, select, textarea {
+  transform: scale(1, .95);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 a {
@@ -53,7 +59,11 @@ a:active { text-decoration: none; }
 
 .facadebook {
   display: inline;
-  padding: 10px
+  padding: 10px;
+}
+
+.blue {
+  color: rgb(49, 91, 218)
 }
 
 .link {
@@ -200,6 +210,14 @@ input, select, textarea {
   display: none;
 }
 
+.reviewer {
+  max-width: 175px;
+}
+
+.stars {
+  max-width: 187px;
+}
+
 .review-body:hover {
   background-color: #e2e2e2;
   border-radius: 10px;
@@ -266,5 +284,10 @@ img.large-img {
 }
 
 .description {
-  margin: 20px 0px 0px 0px;
+  margin: 15px 0px 0px 0px;
+}
+
+.edited {
+  margin: 0px;
+  display: inline;
 }

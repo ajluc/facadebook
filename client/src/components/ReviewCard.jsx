@@ -7,6 +7,7 @@ const ReviewCard = (props) => {
   } // want initial state to be the current review data - does that prop already pass thru?
   const [formState, setFormState] = useState(initialState)
   const [conditional, setConditional] = useState(true)
+  const [edited, setEdited] = useState(props.edited)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -32,6 +33,7 @@ const ReviewCard = (props) => {
 
   const editReview = () => {
     setConditional(false)
+    setEdited(true)
   }
 
   const cancelEdit = () => {
@@ -42,7 +44,10 @@ const ReviewCard = (props) => {
     <div className="card review-card">
       <div className="flex-col">
         <div className="flex-row space-between">
-          <h4>{props.pseudonym}</h4>
+          <div className="flex-row">
+            <h4>{props.pseudonym}</h4>
+            {edited && <p className="edited grey">&nbsp; &bull; &nbsp;edited</p>}
+          </div>
           <div>
             {/* {conditional && <button onClick={editReview}>edit</button>} */}
             <button className="delete grey" onClick={deleteReview}>x</button>

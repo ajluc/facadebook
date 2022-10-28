@@ -6,6 +6,7 @@ const AddReview = (props) => {
     pseudonym: '',
     rating: '',
     message: '',
+    edited: false,
     buildingId: props.buildingDetails._id
   }
   const [formState, setFormState] = useState(initialState)
@@ -26,9 +27,9 @@ const AddReview = (props) => {
   return(
     <form className="card review-container" onSubmit={handleSubmit}>
       {/* <label htmlFor="pseudonym">Your Pseudonym</label> */}
-      <input type='text' placeholder='Reviewer' id='pseudonym' onChange={handleChange} value={formState.pseudonym} />
+      <input className="edit-review reviewer" type='text' placeholder='Reviewer' id='pseudonym' onChange={handleChange} value={formState.pseudonym} />
       {/* <label htmlFor="rating">Architectural Style:</label> */}
-      <select id="rating" onChange={handleChange} value={formState.rating} >
+      <select className="edit-review stars" id="rating" onChange={handleChange} value={formState.rating} >
         <option value='' disabled>- Select Rating -</option>
         <option value={0}>0 Stars</option>
         <option value={1}>1 Star</option>
@@ -37,7 +38,6 @@ const AddReview = (props) => {
         <option value={4}>4 Stars</option>
         <option value={5}>5 Stars</option>
       </select>
-      {/* <label htmlFor="message">Message</label> */}
       <textarea
         id="message"
         className="edit-review"

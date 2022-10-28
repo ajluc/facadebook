@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header>
       <nav className='nav-grid'>
-        <p className='facadebook' >facadebook</p>
+        <p className='facadebook bold blue' >facadebook</p>
         <div className='link'>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>

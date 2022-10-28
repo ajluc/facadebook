@@ -67,6 +67,7 @@ const Building = () => {
                   pseudonym={review.pseudonym}
                   rating={review.rating}
                   message={review.message}
+                  edited={review.edited}
                   buildingDetails={buildingDetails}
                   setBuildingDetails={setBuildingDetails}
                   getBuildingDetails={getBuildingDetails}
