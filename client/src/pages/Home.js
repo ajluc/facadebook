@@ -35,8 +35,8 @@ const Home = () => {
   return (
     <div>
       <div className="large-card-container">
-        <div className="card large-card review-container">
-          <div className="flex-col">
+        <div className="card large-card">
+          <div className="flex-col details">
             <h3>Architectural Styles</h3>
             <div className="flex-row grey">
               <p className="bold">Amaya Lucas</p>
