@@ -39,7 +39,7 @@ const Home = () => {
           <div className="flex-col details">
             <h3>Architectural Styles</h3>
             <div className="flex-row grey">
-              <p className="bold">Amaya Lucas</p>
+              <p className="bold">Admin Post</p>
               <p>&nbsp; &bull; &nbsp;</p>
               <p> Oct 8</p>
             </div>
