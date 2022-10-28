@@ -24,7 +24,7 @@ const AddReview = (props) => {
   }
 
   return(
-    <form className="card" onSubmit={handleSubmit}>
+    <form className="card review-container" onSubmit={handleSubmit}>
       {/* <label htmlFor="pseudonym">Your Pseudonym</label> */}
       <input type='text' placeholder='Reviewer' id='pseudonym' onChange={handleChange} value={formState.pseudonym} />
       {/* <label htmlFor="rating">Architectural Style:</label> */}
@@ -40,13 +40,16 @@ const AddReview = (props) => {
       {/* <label htmlFor="message">Message</label> */}
       <textarea
         id="message"
-        placeholder="Add new review"
+        className="edit-review"
+        placeholder="Add new review..."
         cols="30"
         rows="4"
         onChange={handleChange}
         value={formState.message}
       ></textarea>
-      <button type="submit">Send</button>
+      <div className="align-end">
+        <button type="submit">Send</button>
+      </div>
     </form>
   )
 }
