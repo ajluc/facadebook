@@ -190,6 +190,15 @@ form {
   /* padding: 20px; */
 }
 
+form.search {
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/* button.search {
+
+} */
+
 input, select, textarea {
   margin: 5px 0px;
 }

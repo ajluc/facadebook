@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Search from '../components/Search'
 
 const Header = () => {
   return (
@@ -10,6 +11,7 @@ const Header = () => {
           <Link to="/about">About</Link>
           <Link to="/add">Add Building</Link>
         </div>
+        <Search onSumbit={() => console.log('submit')} onChange={() => console.log('change')} value=''/>
       </nav>
     </header>
   )

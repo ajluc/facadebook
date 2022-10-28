@@ -4,8 +4,13 @@ import axios from 'axios'
 import ReviewCard from '../components/ReviewCard'
 import AddReview from '../components/AddReview'
 
-const Building = () => {
-  let { buildingId } = useParams()
+const Building = (props) => {
+  // let { buildingId } = useParams()
+  // if (!buildingId) {
+  //   buildingId = props.buildingId
+  // }
+  let buildingId = props.buildingId
+  console.log(buildingId)
 
   const [buildingDetails, setBuildingDetails] = useState(null)
 
@@ -13,7 +18,8 @@ const Building = () => {
     const response = await axios.get(
       `http://localhost:3001/building/${buildingId}`
     )
-    setBuildingDetails(response.data)
+    console.log(response.data)
+    await setBuildingDetails(response.data)
   }
 
   useEffect(() => {
@@ -28,7 +34,7 @@ const Building = () => {
   return (
     <div className="large-card-container">
       <div className="card large-card">
-        {buildingDetails ? (
+        {buildingDetails?.archStyle ? (
           <div>
             <section className="details flex-col">
               <div className="flex-row">

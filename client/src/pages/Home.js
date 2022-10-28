@@ -2,17 +2,25 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import StyleCard from '../components/StyleCard'
+import Building from './Building'
 
 const Home = () => {
   const [styles, setStyles] = useState([])
+  const [buildings, setBuildings] = useState([])
 
   const getStyles = async () => {
     const response = await axios.get(`http://localhost:3001/style`)
     setStyles(response.data.buildings)
   }
 
+  const getBuildings = async () => {
+    const response = await axios.get(`http://localhost:3001/building`)
+    setBuildings(response.data.buildings)
+  }
+
   useEffect(() => {
     getStyles()
+    getBuildings()
   }, [])
 
   let navigate = useNavigate()
@@ -50,6 +58,10 @@ const Home = () => {
           </section>
         </div>
       </div>
+      {buildings?.map((building) => (
+        <Building key={building._id} buildingId={building._id} />
+        // <p>{building._id}</p>
+      ))}
     </div>
   )
 }

@@ -11,7 +11,7 @@ const ReviewCard = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const res = axios.put(`http://localhost:3001/review/${props.id}`, { message: formState.message})
+    const res = axios.put(`http://localhost:3001/review/${props.id}`, { message: formState.message, edited: edited})
     console.log(res)
     setConditional(true)
     props.getBuildingDetails()
