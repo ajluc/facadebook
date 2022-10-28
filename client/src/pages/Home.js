@@ -28,8 +28,8 @@ const Home = () => {
   //   navigate(``)
   // }
 
-  const viewStyle = (id) => {
-    navigate(`/style/${id}`)
+  const viewStyle = (id, styleName) => {
+    navigate(`/style/${id}`, { styleName: styleName })
   }
 
   return (

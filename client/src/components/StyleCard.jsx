@@ -2,7 +2,7 @@ const StyleCard = (props) => {
 
 
   return (
-    <div className="style card small-card" onClick={() => props.onClick(props.id)}>
+    <div className="style card small-card" onClick={() => props.onClick(props.id, props.styleName)}>
       <div className="img-wrapper">
         <img src={props.exImg} alt="small-img" />
       </div>

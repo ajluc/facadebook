@@ -7,7 +7,7 @@ const ViewBuildingsOfStyle = () => {
   const [buildings, setBuildings] = useState([])
 
   let navigate = useNavigate()
-  let { styleId } = useParams()
+  let { styleId, styleName } = useParams()
 
   const getBuildingsByStyle = async () => {
     const response = await axios.get(
@@ -25,17 +25,24 @@ const ViewBuildingsOfStyle = () => {
   }, [styleId])
 
   return (
-    <div className="container-grid">
-      {buildings?.map((building) => (
-        <BuildingCard
-          key={building._id}
-          id={building._id}
-          building={building.building}
-          img={building.img}
-          architect={building.architect}
-          onClick={viewBuilding}
-        />
-      ))}
+    <div className="large-card-container">
+      <div className="card large-card">
+        <div className="flex-col details">
+          <h3>{styleName}</h3>
+        </div>
+        <div className="container-grid">
+          {buildings?.map((building) => (
+            <BuildingCard
+              key={building._id}
+              id={building._id}
+              building={building.building}
+              img={building.img}
+              architect={building.architect}
+              onClick={viewBuilding}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

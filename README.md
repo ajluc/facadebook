@@ -37,6 +37,15 @@ In the navigation bar at the top of the page, users can return home, read the "a
 
 ### **_Screenshots_**
 
+Styles post:
+![img1](./images/img1.png)
+
+Building post:
+![img2](./images/img2.png)
+
+Editing a review:
+![img3](./images/img3.png)
+
 ---
 
 ### **_Tasks_**
