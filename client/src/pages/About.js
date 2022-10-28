@@ -5,7 +5,7 @@ const About = () => {
         <div className="card large-card">
           <div className="review-container">
             <div className="flex-col">
-              <h3>About Facadebook</h3>
+              <h3>About facadebook</h3>
               <div className="flex-row grey">
                 <p className="bold">Amaya Lucas</p>
                 <p>&nbsp; &bull; &nbsp;</p>
