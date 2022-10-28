@@ -5,12 +5,10 @@ import ReviewCard from '../components/ReviewCard'
 import AddReview from '../components/AddReview'
 
 const Building = (props) => {
-  // let { buildingId } = useParams()
-  // if (!buildingId) {
-  //   buildingId = props.buildingId
-  // }
-  let buildingId = props.buildingId
-  console.log(buildingId)
+  let { buildingId } = useParams()
+  if (!buildingId) {
+    buildingId = props.buildingId
+  }
 
   const [buildingDetails, setBuildingDetails] = useState(null)
 
@@ -18,7 +16,6 @@ const Building = (props) => {
     const response = await axios.get(
       `http://localhost:3001/building/${buildingId}`
     )
-    console.log(response.data)
     await setBuildingDetails(response.data)
   }
 
@@ -54,9 +51,7 @@ const Building = (props) => {
                   </div>
                 </div>
               </div>
-              <p className="description">
-                Description: {buildingDetails.description}
-              </p>
+              <p className="description">{buildingDetails.description}</p>
             </section>
             <section className="image-container">
               <img
