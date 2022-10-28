@@ -25,34 +25,35 @@ const AddBuildingForm = (props) => {
   }
 
   return(
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="archStyle">Architectural Style:</label>
-      <select id="archStyle" onChange={handleChange} value={formState.archStyle} >
-        <option value='' disabled>- Select Style -</option>
-        <option value='63569d7fa129087b76c99a54'>Modern</option>
-        <option value='63569d7fa129087b76c99a55'>Post-Modern</option>
-        <option value='63569d7fa129087b76c99a56'>Neoclassical</option>
-        <option value='63569d7fa129087b76c99a57'>Classical</option>
-        <option value='63569d7fa129087b76c99a58'>Parametric</option>
-      </select>
-      <label htmlFor="building">Building Title</label>
-      <input type='text' id='building' onChange={handleChange} value={formState.building} />
-      <label htmlFor="architect">Architect</label>
-      <input type='text' id='architect' onChange={handleChange} value={formState.architect} />
-      <label htmlFor="dateCompleted">Date Completed</label>
-      <input type='text' id="dateCompleted" onChange={handleChange} value={formState.dateCompleted} />
-      <label htmlFor="img">Image URL</label>
-      <input type='text' id="img" onChange={handleChange} value={formState.img} />
-      <label htmlFor="description">Description</label>
-      <textarea
-        id="description"
-        cols="30"
-        rows="10"
-        onChange={handleChange}
-        value={formState.description}
-      ></textarea>
-      <button type="submit">Send</button>
-    </form>
+    <div className="large-card-container">
+      <div className="card large-card review-container">
+        <form onSubmit={handleSubmit}>
+          <input type='text' placeholder="Architect" id='architect' onChange={handleChange} value={formState.architect} />
+          <input type='text' placeholder="Building Title or Address" id='building' onChange={handleChange} value={formState.building} />
+          <select id="archStyle" onChange={handleChange} value={formState.archStyle} >
+            <option value='' disabled>- Architectural Style -</option>
+            <option value='63569d7fa129087b76c99a54'>Modern</option>
+            <option value='63569d7fa129087b76c99a55'>Post-Modern</option>
+            <option value='63569d7fa129087b76c99a56'>Neoclassical</option>
+            <option value='63569d7fa129087b76c99a57'>Classical</option>
+            <option value='63569d7fa129087b76c99a58'>Parametric</option>
+          </select>
+          <input type='text' placeholder="Date Completed" id="dateCompleted" onChange={handleChange} value={formState.dateCompleted} />
+          <input type='text' placeholder="Image URL" id="img" onChange={handleChange} value={formState.img} />
+          <textarea
+            id="description"
+            placeholder="Description..."
+            cols="30"
+            rows="10"
+            onChange={handleChange}
+            value={formState.description}
+          ></textarea>
+          <div className="align-end">
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
   )
 }
 

@@ -16,7 +16,7 @@ body {
 
 header {
   background-color: white;
-  padding: 10px;
+  /* padding: 10px; */
   filter: drop-shadow(1px 1px 2px rgb(194, 194, 194));
   position: sticky;
   top: 0;
@@ -60,6 +60,8 @@ a:active { text-decoration: none; }
 .facadebook {
   display: inline;
   padding: 10px;
+  font-size: 20px;
+  margin: 0px;
 }
 
 .blue {
@@ -120,7 +122,7 @@ button.delete:hover {
 }
 
 .small-card {
-  max-width: 300px;
+  max-width: 340px;
   max-height: 380px;
   cursor: pointer;
 }
@@ -162,10 +164,10 @@ button.delete:hover {
 }
 
 .container-grid {
-  padding: 2em 0;
+  padding: 20px 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 320px);
-  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fill, 340px);
+  grid-gap: 20px;
   justify-content: center;
 }
 
@@ -192,7 +194,7 @@ input, select, textarea {
   margin: 5px 0px;
 }
 
-.edit-review {
+.edit-review, input, textarea, select {
   /* background-color: #e2e2e2; */
   border: 1px solid #e2e2e2;
   border-radius: 10px;

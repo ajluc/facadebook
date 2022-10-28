@@ -26,21 +26,29 @@ const Home = () => {
 
   return (
     <div>
-      <h1>HOME</h1>
-      <div className="styles">
-        <h2>Architectural Styles</h2>
-        <section className="container-grid">
-          {styles?.map((style) => (
-            <StyleCard
-              key={style._id}
-              onClick={viewStyle}
-              styleName={style.styleName}
-              timeFrame={style.timeFrame}
-              exImg={style.exImg}
-              id={style._id}
-            />
-          ))}
-        </section>
+      <div className="large-card-container">
+        <div className="card large-card review-container">
+          <div className="flex-col">
+            <h3>Architectural Styles</h3>
+            <div className="flex-row grey">
+              <p className="bold">Amaya Lucas</p>
+              <p>&nbsp; &bull; &nbsp;</p>
+              <p> Oct 8</p>
+            </div>
+          </div>
+          <section className="container-grid">
+            {styles?.map((style) => (
+              <StyleCard
+                key={style._id}
+                onClick={viewStyle}
+                styleName={style.styleName}
+                timeFrame={style.timeFrame}
+                exImg={style.exImg}
+                id={style._id}
+              />
+            ))}
+          </section>
+        </div>
       </div>
     </div>
   )
