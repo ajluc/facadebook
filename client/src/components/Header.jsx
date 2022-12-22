@@ -3,7 +3,7 @@ import Search from '../components/Search'
 
 const Header = () => {
   return (
-    <header>
+    <header className='header'>
       <nav className='nav-grid'>
         <p className='facadebook bold blue' >facadebook</p>
         <div className='link'>

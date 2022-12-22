@@ -21,6 +21,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
+  margin-bottom: 10px;
 }
 
 h3, h4 {
@@ -131,7 +132,7 @@ button.delete:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .large-card {
@@ -301,4 +302,16 @@ img.large-img {
 .edited {
   margin: 0px;
   display: inline;
+}
+
+.grey-rounded {
+  background-color: #e2e2e2;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin: 0px 0px 0px 15px;
+  width: 100%;
+}
+
+.grey-rounded:hover {
+  opacity: 0.8;
 }

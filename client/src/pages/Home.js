@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
 import StyleCard from '../components/StyleCard'
 import Building from './Building'
@@ -32,8 +32,28 @@ const Home = () => {
     navigate(`/style/${id}`, { styleName: styleName })
   }
 
+  const addBuilding = () => {
+    navigate(`/add`)
+  }
+
   return (
     <div>
+      <div className="large-card-container">
+        <div className="card large-card">
+          <div className="details">
+            <div className="flex-row">
+              <img
+                src="../../assets/images/blank-avatar.png"
+                alt="avatar"
+                className="icon-img"
+              />
+              <div className="grey-rounded" onClick={addBuilding}>
+                <p>what's on ur mind</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="large-card-container">
         <div className="card large-card">
           <div className="flex-col details">
