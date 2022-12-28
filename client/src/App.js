@@ -6,6 +6,7 @@ import About from './pages/About'
 import ViewBuildingsOfStyle from './pages/ViewBuildingsOfStyle'
 import Building from './pages/Building'
 import AddBldg from './pages/AddBldg'
+import AddStyleForm from './components/AddArchStyle'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/add" element={<AddBldg />} />
+          <Route path="/addStyle" element={<AddStyleForm />} />
           <Route path="/style/:styleId" element={<ViewBuildingsOfStyle />} />
           <Route path="/building/:buildingId" element={<Building />} />
         </Routes>
