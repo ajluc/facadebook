@@ -15,7 +15,7 @@ const AddBuildingForm = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const res = await axios.post(`http://localhost:3001/building/new`, formState)
+    const res = await axios.post(`/building/new`, formState)
     console.log(res.data)
     setFormState(initialState)
   }
