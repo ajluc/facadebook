@@ -18,8 +18,11 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/add" element={<AddBldg />} />
           <Route path="/addStyle" element={<AddStyleForm />} />
-          <Route path="/style/:styleId" element={<ViewBuildingsOfStyle />} />
-          <Route path="/building/:buildingId" element={<Building />} />
+          <Route
+            path="/viewstyle/:styleId"
+            element={<ViewBuildingsOfStyle />}
+          />
+          <Route path="/viewbuilding/:buildingId" element={<Building />} />
         </Routes>
       </main>
     </div>
