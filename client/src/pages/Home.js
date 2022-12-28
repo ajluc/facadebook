@@ -9,12 +9,12 @@ const Home = () => {
   const [buildings, setBuildings] = useState([])
 
   const getStyles = async () => {
-    const response = await axios.get(`http://localhost:3001/style`)
+    const response = await axios.get(`/style`)
     setStyles(response.data.buildings)
   }
 
   const getBuildings = async () => {
-    const response = await axios.get(`http://localhost:3001/building`)
+    const response = await axios.get(`/building`)
     setBuildings(response.data.buildings)
   }
 
