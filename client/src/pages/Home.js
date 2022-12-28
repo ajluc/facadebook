@@ -4,8 +4,7 @@ import axios from 'axios'
 import StyleCard from '../components/StyleCard'
 import Building from './Building'
 
-const Home = () => {
-  const [styles, setStyles] = useState([])
+const Home = ({ styles, setStyles }) => {
   const [buildings, setBuildings] = useState([])
 
   const getStyles = async () => {

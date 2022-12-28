@@ -7,16 +7,23 @@ import ViewBuildingsOfStyle from './pages/ViewBuildingsOfStyle'
 import Building from './pages/Building'
 import AddBldg from './pages/AddBldg'
 import AddStyleForm from './components/AddArchStyle'
+import AddBuildingForm from './components/AddBuilding'
 
 const App = () => {
+  const [styles, setStyles] = useState([])
+
   return (
     <div>
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={<Home styles={styles} setStyles={setStyles} />}
+          />
           <Route path="/about" element={<About />} />
-          <Route path="/add" element={<AddBldg />} />
+          {/* <Route path="/add" element={<AddBldg styles={styles} />} /> */}
+          <Route path="/add" element={<AddBuildingForm styles={styles} />} />
           <Route path="/addStyle" element={<AddStyleForm />} />
           <Route
             path="/viewstyle/:styleId"

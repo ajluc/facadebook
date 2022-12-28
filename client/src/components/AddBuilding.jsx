@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-const AddBuildingForm = (props) => {
+const AddBuildingForm = ({styles}) => {
   const initialState = {
     building: '',
     dateCompleted: '',
@@ -33,11 +33,12 @@ const AddBuildingForm = (props) => {
             <input type='text' placeholder="Building Title or Address" id='building' onChange={handleChange} value={formState.building} />
             <select id="archStyle" onChange={handleChange} value={formState.archStyle} >
               <option value='' disabled>- Architectural Style -</option>
-              <option value='63569d7fa129087b76c99a54'>Modern</option>
+              {styles.map((style) => <option value={style._id}>{style.styleName}</option>)}
+              {/* <option value='63569d7fa129087b76c99a54'>Modern</option>
               <option value='63569d7fa129087b76c99a55'>Post-Modern</option>
               <option value='63569d7fa129087b76c99a56'>Neoclassical</option>
               <option value='63569d7fa129087b76c99a57'>Classical</option>
-              <option value='63569d7fa129087b76c99a58'>Parametric</option>
+              <option value='63569d7fa129087b76c99a58'>Parametric</option> */}
             </select>
             <input type='text' placeholder="Date Completed" id="dateCompleted" onChange={handleChange} value={formState.dateCompleted} />
             <input type='text' placeholder="Image URL" id="img" onChange={handleChange} value={formState.img} />
