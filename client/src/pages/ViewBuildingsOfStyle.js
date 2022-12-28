@@ -10,14 +10,12 @@ const ViewBuildingsOfStyle = () => {
   let { styleId, styleName } = useParams()
 
   const getBuildingsByStyle = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/building/style/${styleId}`
-    )
+    const response = await axios.get(`/building/style/${styleId}`)
     setBuildings(response.data)
   }
 
   const viewBuilding = (id) => {
-    navigate(`/building/${id}`)
+    navigate(`/viewbuilding/${id}`)
   }
 
   useEffect(() => {

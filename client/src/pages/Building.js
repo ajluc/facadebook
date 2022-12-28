@@ -13,9 +13,7 @@ const Building = (props) => {
   const [buildingDetails, setBuildingDetails] = useState(null)
 
   const getBuildingDetails = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/building/${buildingId}`
-    )
+    const response = await axios.get(`/building/${buildingId}`)
     await setBuildingDetails(response.data)
   }
 
@@ -25,7 +23,7 @@ const Building = (props) => {
 
   let navigate = useNavigate()
   const viewStyle = (id) => {
-    navigate(`/style/${id.target.id}`)
+    navigate(`/viewstyle/${id.target.id}`)
   }
 
   return (

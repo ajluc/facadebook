@@ -29,7 +29,7 @@ const Home = () => {
   // }
 
   const viewStyle = (id, styleName) => {
-    navigate(`/style/${id}`, { styleName: styleName })
+    navigate(`/viewstyle/${id}`, { styleName: styleName })
   }
 
   const addBuilding = () => {

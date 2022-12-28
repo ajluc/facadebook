@@ -13,7 +13,7 @@ const AddReview = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const res = await axios.post(`http://localhost:3001/review/new`, formState)
+    const res = await axios.post(`/review/new`, formState)
     let tempState = {...props.buildingDetails}
     tempState.reviews.push(res.data.review)
     props.setBuildingDetails(tempState)

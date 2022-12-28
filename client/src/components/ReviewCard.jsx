@@ -11,7 +11,7 @@ const ReviewCard = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const res = axios.put(`http://localhost:3001/review/${props.id}`, { message: formState.message, edited: edited})
+    const res = axios.put(`/review/${props.id}`, { message: formState.message, edited: edited})
     console.log(res)
     setConditional(true)
     props.getBuildingDetails()
@@ -22,7 +22,7 @@ const ReviewCard = (props) => {
   }
 
   const deleteReview = async () => {
-    await axios.delete(`http://localhost:3001/review/${props.id}`, { data: {
+    await axios.delete(`/review/${props.id}`, { data: {
       buildingId: props.buildingDetails._id,
       index: props.index
     }})
