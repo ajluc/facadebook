@@ -12,7 +12,7 @@ const AddStyleForm
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const res = await axios.post(`/style/new`, formState)
+    const res = await axios.post(`/api/style/new`, formState)
     console.log(res.data)
     setFormState(initialState)
   }
