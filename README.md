@@ -55,12 +55,12 @@ Editing a review:
 ### **_Tasks_**
 
 - [x] Add all buildings to home page feed
+- [x] Deploy the project
+- [x] Add new building post at top of feed
 - [ ] Search bar functionality
-- [ ] Add new building post at top of feed
 - [ ] Create "likes" on building details
 - [ ] Icons and font in nav bar
 - [ ] Blue as highlight color for buttons
-- [ ] Deploy the project
 
 ---
 
