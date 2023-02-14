@@ -4,6 +4,10 @@
 
 ### Author: Amaya Lucas
 
+### Deployed Page: [Facadebook](https://facadebook.herokuapp.com/)
+
+---
+
 #### [Trello](https://trello.com/b/BegZayn6/facadebook) || [GitHub](https://github.com/ajluc) | [LinkedIn](https://www.linkedin.com/in/amaya-lucas/)
 
 ---
