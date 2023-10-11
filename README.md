@@ -2,13 +2,11 @@
 
 ## Date: 10/20/2022
 
-### Author: Amaya Lucas
-
-### Deployed Page: [Facadebook](https://facadebook.herokuapp.com/)
+### Deployed Page: [Facadebook](https://facadebook-874f7b890253.herokuapp.com/)
 
 ---
 
-#### [Trello](https://trello.com/b/BegZayn6/facadebook) || [GitHub](https://github.com/ajluc) | [LinkedIn](https://www.linkedin.com/in/amaya-lucas/)
+#### [Trello](https://trello.com/b/BegZayn6/facadebook) | [GitHub](https://github.com/ajluc) | [LinkedIn](https://www.linkedin.com/in/amaya-lucas/)
 
 ---
 
